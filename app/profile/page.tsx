@@ -132,18 +132,18 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <>
+      <div>
         <Header />
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center pt-16">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
         </div>
-      </>
+      </div>
     )
   }
 
   if (!profileData) {
     return (
-      <>
+      <div>
         <Header />
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-16">
           <div className="container mx-auto px-4 py-12">
@@ -152,12 +152,12 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
-      </>
+      </div>
     )
   }
 
   return (
-    <>
+    <div>
       <Header />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-16">
         {/* Profile Header */}
@@ -255,7 +255,7 @@ export default function ProfilePage() {
                   </div>
                 </form>
               ) : (
-                <>
+                <div>
                   <div className="flex items-center justify-center md:justify-start gap-4 mb-2">
                     <h1 className="text-3xl font-bold text-gray-900">
                       {profileData.profile.name}
@@ -283,7 +283,7 @@ export default function ProfilePage() {
                       가입일: {formatDate(profileData.profile.created_at)}
                     </span>
                   </div>
-                </>
+                </div>
               )}
             </div>
           </div>
@@ -430,5 +430,6 @@ export default function ProfilePage() {
         </div>
       </div>
     </div>
+  </div>
   )
 }

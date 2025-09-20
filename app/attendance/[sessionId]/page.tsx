@@ -288,7 +288,7 @@ export default function AttendancePage() {
                 className="w-full btn-gradient"
                 onClick={handleAttendanceCheck}
                 loading={loading}
-                disabled={!inputCode.trim() || checkStatus === 'success'}
+                disabled={!inputCode.trim() || (checkStatus as string) === 'success'}
               >
                 <Sparkles className="h-5 w-5 mr-2" />
                 출석 체크하기

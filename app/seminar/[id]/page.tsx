@@ -364,7 +364,7 @@ export default function SeminarDetailPage() {
                                  key === 'project' ? '프로젝트' :
                                  key === 'participation' ? '참여도' : key}
                               </span>
-                              <span className="font-medium">{value}%</span>
+                              <span className="font-medium">{String(value)}%</span>
                             </div>
                           ))}
                         </div>

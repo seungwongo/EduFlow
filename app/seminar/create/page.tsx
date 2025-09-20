@@ -392,7 +392,7 @@ export default function CreateSeminarPage() {
   }
 
   return (
-    <>
+    <div>
       <Header />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-16">
         {/* Page Header */}
@@ -847,7 +847,7 @@ export default function CreateSeminarPage() {
                         </div>
                         <div className="flex gap-2">
                           {!editMode ? (
-                            <>
+                            <div className="flex gap-2">
                               <Button
                                 type="button"
                                 variant="outline"
@@ -868,9 +868,9 @@ export default function CreateSeminarPage() {
                                   재생성
                                 </Button>
                               )}
-                            </>
+                            </div>
                           ) : (
-                            <>
+                            <div>
                               <Button
                                 type="button"
                                 variant="outline"
@@ -892,7 +892,7 @@ export default function CreateSeminarPage() {
                                 <Save className="h-4 w-4 mr-2" />
                                 저장
                               </Button>
-                            </>
+                            </div>
                           )}
                         </div>
                       </div>
@@ -1391,14 +1391,14 @@ export default function CreateSeminarPage() {
                               </div>
                             ) : (
                               // 세션 보기 모드
-                              <>
+                              <div>
                                 <div className="flex items-center justify-between mb-2">
                                   <h4 className="font-semibold text-gray-900">
                                     {session.week}주차: {session.title || `세션 ${session.week}`}
                                   </h4>
                                   <div className="flex items-center gap-2">
                                     {editMode && (
-                                      <>
+                                      <div>
                                         <button
                                           type="button"
                                           onClick={() => moveSession(index, 'up')}
@@ -1429,7 +1429,7 @@ export default function CreateSeminarPage() {
                                         >
                                           <Trash2 className="h-4 w-4" />
                                         </button>
-                                      </>
+                                      </div>
                                     )}
                                     <Clock className="h-5 w-5 text-gray-400" />
                                   </div>
@@ -1448,7 +1448,7 @@ export default function CreateSeminarPage() {
                                     ))}
                                   </div>
                                 )}
-                              </>
+                              </div>
                             )}
                           </div>
                         ))}
@@ -1482,5 +1482,6 @@ export default function CreateSeminarPage() {
         </div>
       </div>
     </div>
+  </div>
   )
 }

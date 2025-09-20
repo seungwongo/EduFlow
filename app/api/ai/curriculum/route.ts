@@ -123,7 +123,7 @@ function generateMockCurriculum(topic: string, duration: number, level: string) 
   const weeks = Math.ceil(duration / 7)
   const sessions = []
   
-  const topics = {
+  const topics: { [key: string]: string[] } = {
     'AI 기초': [
       '인공지능 개요와 역사',
       '머신러닝 기초 개념',
@@ -167,11 +167,11 @@ function generateMockCurriculum(topic: string, duration: number, level: string) 
     '발표 및 피드백'
   ]
 
-  const selectedTopics = Object.keys(topics).find(key => 
+  const matchedKey = Object.keys(topics).find(key => 
     topic.toLowerCase().includes(key.toLowerCase())
-  ) ? topics[Object.keys(topics).find(key => 
-    topic.toLowerCase().includes(key.toLowerCase())
-  )!] : defaultTopics
+  )
+  
+  const selectedTopics = matchedKey ? topics[matchedKey] : defaultTopics
 
   for (let i = 0; i < Math.min(weeks, 8); i++) {
     sessions.push({
